@@ -12,7 +12,14 @@
  * @package         Museum
  */
 
-//
+// Set var for dir path
 $dir = plugin_dir_path( __FILE__ );
 
+// Require Post Types file
 require_once $dir . '/post-types.php';
+
+// Require Taxonomies file
+require_once $dir . '/taxonomies.php';
+
+// Require Metaboxes file
+require_once $dir . '/metaboxes.php';
