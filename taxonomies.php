@@ -40,7 +40,7 @@ function museum_taxonomies() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'type', array( 'collection' ), $type_args );
+	register_taxonomy( 'type', array( 'collection', 'artist' ), $type_args );
 
 	/**
 	 * Collection and Artist Styles
