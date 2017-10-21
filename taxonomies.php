@@ -41,6 +41,42 @@ function museum_taxonomies() {
 	);
 
 	register_taxonomy( 'type', array( 'collection' ), $type_args );
+
+	/**
+	 * Collection and Artist Styles
+	 */
+	$style_labels = array(
+		'name'                  => _x( 'Styles', 'museum' ),
+		'singular_name'         => _x( 'Style', 'museum' ),
+		'search_items'          => __( 'Search Styles', 'museum' ),
+		'popular_items'         => __( 'Popular Styles', 'museum' ),
+		'all_items'             => __( 'All Styles', 'museum' ),
+		'parent_item'           => __( 'Parent Style', 'museum' ),
+		'parent_item_colon'     => __( 'Parent Style', 'museum' ),
+		'edit_item'             => __( 'Edit Style', 'museum' ),
+		'update_item'           => __( 'Update Style', 'museum' ),
+		'add_new_item'          => __( 'Add New Style', 'museum' ),
+		'new_item_name'         => __( 'New Style Name', 'museum' ),
+		'add_or_remove_items'   => __( 'Add or remove Styles', 'museum' ),
+		'choose_from_most_used' => __( 'Choose from most used Styles', 'museum' ),
+		'menu_name'             => __( 'Style', 'museum' ),
+	);
+
+	$style_args = array(
+		'labels'            => $style_labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'style', array( 'collection', 'artist' ), $style_args );
 }
 
 add_action( 'init', 'museum_taxonomies' );
